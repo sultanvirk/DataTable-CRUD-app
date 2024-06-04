@@ -1,6 +1,7 @@
 // src/components/DataTable.js
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const API_URL = 'https://jsonplaceholder.typicode.com/posts'; // Example public API
 
@@ -95,7 +96,7 @@ const DataTable = () => {
             <th className="py-2 px-4 border-b">ID</th>
             <th className="py-2 px-4 border-b">Title</th>
             <th className="py-2 px-4 border-b">Body</th>
-
+            <th className="py-2 px-4 border-b">Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -105,7 +106,18 @@ const DataTable = () => {
               <td className="py-2 px-4 border-b">{item.title}</td>
               <td className="py-2 px-4 border-b">{item.body}</td>
               <td className="py-2 px-4 border-b">
-               
+                <Link
+                  to={`/update/${item.id}`}
+                  className="bg-blue-500 text-white py-1 px-3 rounded mr-2"
+                >
+                  Edit
+                </Link>
+                <button
+                  className="bg-red-500 text-white py-1 px-3 rounded"
+                  onClick={() => deleteData(item.id)}
+                >
+                  Delete
+                </button>
               </td>
             </tr>
           ))}
