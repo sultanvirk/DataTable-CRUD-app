@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.loader {
+    border-width: 4px;
+    border-top-width: 4px;
+    border-top-color: #3490dc; /* Blue color */
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }

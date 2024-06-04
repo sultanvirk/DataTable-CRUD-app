@@ -1,13 +1,14 @@
+// src/App.js
+import React from 'react';
+import DataTable from './components/DataTable';
 
-
-function App() {
+const App = () => {
   return (
-    <>
-    <div className="text-3xl font-bold">
-      Tailwind installed
+    <div className="App">
+
+      <DataTable />
     </div>
-    </>
   );
-}
+};
 
 export default App;
